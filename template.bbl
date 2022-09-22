@@ -1,0 +1,36 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[git()]{githubGitHubGpeyrenumericaltours}
+{G}it{H}ub - gpeyre/numerical-tours: {N}umerical {T}ours of {S}ignal
+  {P}rocessing --- github.com.
+\newblock \url{https://github.com/gpeyre/numerical-tours}.
+\newblock [Accessed 22-Sep-2022].
+
+\bibitem[pro()]{projectrheaECE637Tomographic}
+{E}{C}{E}637 tomographic reconstruction radon transform {S}13 mhossain - {R}hea
+  --- projectrhea.org.
+\newblock
+  \url{https://www.projectrhea.org/rhea/index.php/ECE637_tomographic_reconstruction_radon_transform_S13_mhossain}.
+\newblock [Accessed 22-Sep-2022].
+
+\bibitem[Hadash et~al.(2018)Hadash, Kermany, Carmeli, Lavi, Kour, and
+  Jacovi]{hadash2018estimate}
+Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
+  Jacovi.
+\newblock Estimate and replace: A novel approach to integrating deep neural
+  networks with existing applications.
+\newblock \emph{arXiv preprint arXiv:1804.09028}, 2018.
+
+\bibitem[Kour and Saabne(2014)]{kour2014fast}
+George Kour and Raid Saabne.
+\newblock Fast classification of handwritten on-line arabic characters.
+\newblock In \emph{Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
+  International Conference of}, pages 312--318. IEEE, 2014.
+\newblock \doi{10.1109/SOCPAR.2014.7008025}.
+
+\end{thebibliography}

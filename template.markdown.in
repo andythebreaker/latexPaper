@@ -1,0 +1,6 @@
+|Picture location|Meaning|
+|--|--|
+|Lower left|Input picture|
+|Upper left|Picture after binarization, noise removal, and boundary search|
+|Upper right|The relationship between the coordinate rotation angle and the "integration on the y axis"|
+|Lower right|Output picture|
