@@ -150,52 +150,19 @@ For the part of image preprocessing, including color and angle correction, it is
 According to the specification of color code marking, different manufacturers will make different series of resistors. We cannot solve the problem of color code resistance identification by classification problem. We use an end-to-end solution, which is similar to the example method of image to latex. , a RNN is connected in series behind the CNN, and the focus method is used to train the model to learn to output the direct resistance value. In this way, our results can cover all possible resistance values, rather than being limited to discrete components that can be purchased at local electronic materials stores.
 
 \subsection{Summary Statement of Implementation Results}
-3. Thematic implementation plan
-(1) Progress Gantt Chart
-Please refer to the description below for the work code.
-Description of work code:
-1. Stage 1 (topic setting stage)
-(1) Familiar with machine learning knowledge
-(2) Literature search
-(3) Find feasible research objectives
-(4) Literature review
-(5) Feasibility analysis
-(6) Experimental environment setup (GCP)
-(7) Experimental environment setup (Local GPU workstation)
-(8) Manual data collection
-(9) Manual data labeling
-2. Phase 2 (basic function construction)
-(1) True and false identification training
-(2) Image recognition using yoloV5
-(3) Fine-tuning
-(4) Image classification task
-3. Stage 3 (Accuracy Optimization)
-(1) Color correction
-(2) Image normalization using OpenCV
-(3) Numerical identification using OpenCV
-(4) Analysis and removal of divergent training data
-(5) Auto data collection (Data crawling)
-(6) Auto data labeling (cvat)
-(7) Color correction optimization
-(8) Image normalization optimization
-(9) Numerical identification optimization
-4. Stage 4 (performance optimization)
-(1) Blur frame removal
-(2) Optimization for video (continuous dynamic frames)
-(3) Real-time recognition optimization
-(4) Actual environment test
-5. Phase 5 (Application Packaging)
-(1) TensorFlow.js Web application building
-(2) Model conversion
-(3) Website back-end server setup
-(4) User interface drawing
-(5) Build front-end UI
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{ppp10.pdf}
+	\caption{Sample figure caption.}
+	\label{fig:ppp10}
+\end{figure}
 
 \section{Principle Analysis and System Design}
 \subsection{Principle Analysis}
 
 \subsubsection{Resistor Color Code Rules}
+The color code of discrete resistance components represents its value. We only discuss the perforation elements without discussing the chip components. The color code ring will have the following colors: black, brown, red, orange, yellow, green, blue, purple, gray, white, gold, silver, respectively represent numbers 1 to 9 and errors, respectively. Discrete resistance components have a four -color ring or five -color ring, which represents different resistance accuracy, and its reading value method is similar. Taking an instance of the four -color ring as an example, the first two representatives of the scientific marks, the third digit is the second part, and the fourth place is only gold or silver, which represents the error of 5 or 10 percentage.
 
 \subsubsection{image preprocessing}
 
@@ -444,17 +411,137 @@ The above conditions will cause the boundary detection to output too much inform
 %\paragraph{Test Modified Paragraph}
 
 \subsubsection{Image recognition using traditional computer vision methods}
+Treat the input color pictures according to the steps below to process the image:
+1. Vague
+2. Sotation
+3. Find the critical value
+We can analyze the geometric pattern distribution with different color channels. Unfortunately, because of the reflection relationship, one of the four ribbons will disappear to make this method feasible. Under practical conditions, using the action device to sampling the objects. In the case of turning on the flash, it will inevitably produce harmful reflection. If the flash is not opened, we will pick up in the case of insufficient light. Get the value of 0.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{tcv0.png}
+	\caption{Sample figure caption.}
+	\label{fig:tcv0}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{zz9.png}
+	\caption{Sample figure caption.}
+	\label{fig:zz9}
+\end{figure}
+
 \subsubsection{deep learning methods}
 \subsection{System Design}
 %\subsubsection{data collection}
 %\subsubsection{image tag}
 
 \subsubsection{Mobile device photo data generator}
+\footnote{https://github.com/andythebreaker/camPdfHttpAndriod}
+\paragraph{preamble}
+To color correct as a cardboard
+The camera must focus on the paper card, but in practice, the autofocus of the smartphone has the following problems
+
+Speed varies by algorithm and hardware
+Can't "autofocus" on very close objects
+If there are people in the frame or unusual bright spots (such as reflections), the autofocus will defocus the specific
+Native cameras don't know what a "color-specific card" or "resistance" is
+
+\paragraph{problem analysis}
+
+The above defects are all due to the autofocus algorithm of the native camera program, which is provided for general use.
+If you need special functions, you need to write your own dynamic focus program or use manual focus
+
+\paragraph{planning}
+
+Control the camera with the base camera api
+and take pictures
+Make it focus on a given area of the program(like a resistor or a color card)
+
+The above functions cannot be easily practiced with PWA
+First test with the android system at hand
+
+- Compose apk
+- Implemented in java language
+
+\paragraph{Overview of the current status of the android camera api}
+
+- The old api `camera` has been largely abolished, and most devices with android 4.X are also disabled in hardware, only need to consider the new `camera2` api
+- Given (the following quotes from google)
+> The hardware implementation of `camera2` api of different manufacturers has different degrees of completeness, so start to develop a new generation of `cameraX` api
+
+Most new android devices use `cameraX`
+However, the latest version of `cameraX` was just updated on the 30th of last month (202106), and there is a lack of reference resources on the Internet. It depends on reading the original documents, and the development speed will be slightly later than the general situation.
+
+- The above `cameraX` api is implemented based on the `camera2` api. Although it is more general and simple, if you need to use the lower-level functions, you may have to wait for the update of `cameraX` or call `camera2` directly
+- The 202106 version of the above `cameraX` api only supports android 11 -> There is no hardware compatibility at all, there are not many devices on the market that can support android 11
+
+\paragraph{Focus method}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{oqKRMoT.png}
+	\caption{Sample figure caption.}
+	\label{fig:oqKRMoT}
+\end{figure}
+
+Pictured above
+
+|Object|Description|
+|--|--|
+|Black Square|Camera Frame|
+|Orange square|Target object (resistor or color card)|
+|Red Dot|Focus Point (Zero Area)|
+|Red Square|Focus Range|
+|green lines|other irrelevant objects|
+
+\paragraph{Action description}
+
+Given a camera image, if you want to focus on an object, you can use the equation to specify the coordinates (or even the range) to achieve focus
+\paragraph{advantages and disadvantages}
+
+-The above-mentioned method of focusing on the 2D plane, not directly given the focusing distance (value), which leads to slow speed. You need to go through the "clear-blur" loop.
+-It can also be called directly `camera2`api; but it seems to conflict with the function of the` camerax`api AF, and this problem has not been ruled out yet
+
+\paragraph{Picture adjustment}
+
+The same API also provides automatic adjustment of exposure and saturation. The method has been implemented at the top code.
 \subsubsection{color correction}
+For the errors of environmental light sources, such as: sunlight lamp tube color temperature is too cold or sunlight is transmitted to heat over heat ... When artificial labeling information, we can use manual or automatic ways to adjust the color bias. After drawing the distribution map first, we can first draw the distribution map. We can help make the distributed map back to normal
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{CsXuTh9.jpg}
+	\caption{Sample figure caption.}
+	\label{fig:CsXuTh9}
+\end{figure}
+
+Direct diagram-> YOLO prediction-> manual ride-> again prediction-> get a positive resistance
+
+Bilateral filter (Bilateral Filter)-> (RGB-> HSR (hue, saturation, brightness))-> [Adaptive dual-duty]-> reverse-> color segmentation screen-> get outline-> get obtained A range of large and wide length and width ratio
 \subsubsection{Data collection}
 
 \paragraph{Data curation and visualization}
+\footnote{https://github.com/andythebreaker/picture\_set\_to\_slides\_converter}
+picture set to slides converter
+batch picture slideshow production
 
+os
+windows Tested in windows10.
+
+Software function
+Add the pictures in a folder to the presentation file one by one
+
+Given some pictures (jpg), all installed in a folder.
+Given a directory where output files can be placed.
+The program will generate a presentation file (pptx) with all pictures.
+Please note that the format of the image file name is strict.
+The picture size will not be changed if the picture size is smaller than the size of the slide, otherwise it will be adjusted to fit the size of the slide.
+The user can input the length and width centimeters of the target slide.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{SIj7pfq.png}
+	\caption{Sample figure caption.}
+	\label{fig:SIj7pfq}
+\end{figure}
 \paragraph{Database build}
 
 \subsubsection{Transfer Learning}
@@ -472,7 +559,46 @@ The above conditions will cause the boundary detection to output too much inform
 
 
 \section{conclusion}
-
+3. Thematic implementation plan
+(1) Progress Gantt Chart
+Please refer to the description below for the work code.
+Description of work code:
+1. Stage 1 (topic setting stage)
+(1) Familiar with machine learning knowledge
+(2) Literature search
+(3) Find feasible research objectives
+(4) Literature review
+(5) Feasibility analysis
+(6) Experimental environment setup (GCP)
+(7) Experimental environment setup (Local GPU workstation)
+(8) Manual data collection
+(9) Manual data labeling
+2. Phase 2 (basic function construction)
+(1) True and false identification training
+(2) Image recognition using yoloV5
+(3) Fine-tuning
+(4) Image classification task
+3. Stage 3 (Accuracy Optimization)
+(1) Color correction
+(2) Image normalization using OpenCV
+(3) Numerical identification using OpenCV
+(4) Analysis and removal of divergent training data
+(5) Auto data collection (Data crawling)
+(6) Auto data labeling (cvat)
+(7) Color correction optimization
+(8) Image normalization optimization
+(9) Numerical identification optimization
+4. Stage 4 (performance optimization)
+(1) Blur frame removal
+(2) Optimization for video (continuous dynamic frames)
+(3) Real-time recognition optimization
+(4) Actual environment test
+5. Phase 5 (Application Packaging)
+(1) TensorFlow.js Web application building
+(2) Model conversion
+(3) Website back-end server setup
+(4) User interface drawing
+(5) Build front-end UI
 
 %% \section{Headings: first level}
 %% \label{sec:headings}

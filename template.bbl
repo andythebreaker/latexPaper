@@ -18,6 +18,11 @@
   \url{https://www.projectrhea.org/rhea/index.php/ECE637_tomographic_reconstruction_radon_transform_S13_mhossain}.
 \newblock [Accessed 22-Sep-2022].
 
+\bibitem[mat()]{mathworksRadonTransform}
+{R}adon {T}ransform - {M}{A}{T}{L}{A}{B} {S}imulink --- mathworks.com.
+\newblock \url{https://www.mathworks.com/help/images/radon-transform.html}.
+\newblock [Accessed 22-Sep-2022].
+
 \bibitem[Hadash et~al.(2018)Hadash, Kermany, Carmeli, Lavi, Kour, and
   Jacovi]{hadash2018estimate}
 Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
