@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.4)  22 SEP 2022 22:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.4)  22 SEP 2022 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -848,19 +848,28 @@ File: SIj7pfq.png Graphic file (type png)
 <use SIj7pfq.png>
 Package pdftex.def Info: SIj7pfq.png  used on input line 541.
 (pdftex.def)             Requested size: 328.82706pt x 348.78163pt.
-
-Underfull \vbox (badness 1527) has occurred while \output is active []
-
  [13 <./oqKRMoT.png>] [14 <./CsXuTh9.jpg> <./SIj7pfq.png>]
+<Iry4lIy.jpg, id=335, 1927.2pt x 1561.835pt>
+File: Iry4lIy.jpg Graphic file (type jpg)
+<use Iry4lIy.jpg>
+Package pdftex.def Info: Iry4lIy.jpg  used on input line 559.
+(pdftex.def)             Requested size: 328.82706pt x 266.48553pt.
+<marvin.jpg, id=336, 539.32835pt x 307.41716pt>
+File: marvin.jpg Graphic file (type jpg)
+<use marvin.jpg>
+Package pdftex.def Info: marvin.jpg  used on input line 601.
+(pdftex.def)             Requested size: 328.82706pt x 187.43506pt.
 
-Package natbib Warning: Citation `kour2014real' on page 15 undefined on input l
-ine 631.
+[15 <./Iry4lIy.jpg>]
+
+Package natbib Warning: Citation `kour2014real' on page 16 undefined on input l
+ine 681.
 
 
 Package lipsum Warning: Unknown language 'latin'. Hyphenation patterns for
 (lipsum)                'english' will be used instead.
 
-[15] (./template.bbl
+[16 <./marvin.jpg>] (./template.bbl
 Underfull \hbox (badness 1762) in paragraph at lines 15--20
 []\T1/ptm/m/n/10 (+20) ECE637 to-mo-graphic re-con-struc-tion radon trans-form 
 S13 mhos-sain - Rhea --- pro-jec-trhea.org.  []$\T1/cmtt/m/n/10 https :
@@ -872,22 +881,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--20
 ographic _ reconstruction _ radon _ transform _
  []
 
-)
+[17])
 
 Package natbib Warning: There were undefined citations.
 
-[16] (./template.aux)
+[18] (./template.aux)
 Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: EC77D6FF1F6EEDCA21275055D4D577B8;5536.
  ) 
 Here is how much of TeX's memory you used:
- 18620 strings out of 480247
- 329033 string characters out of 5896152
- 723891 words of memory out of 5000000
- 35923 multiletter control sequences out of 15000+600000
- 531189 words of font info for 209 fonts, out of 8000000 for 9000
+ 18652 strings out of 480247
+ 329426 string characters out of 5896152
+ 724049 words of memory out of 5000000
+ 35939 multiletter control sequences out of 15000+600000
+ 531576 words of font info for 215 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 83i,12n,91p,1005b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,12n,91p,1005b,453s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/fast/.texl
 ive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
@@ -900,10 +909,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on template.pdf (16 pages, 1808783 bytes).
+Output written on template.pdf (18 pages, 2172817 bytes).
 PDF statistics:
- 482 PDF objects out of 1000 (max. 8388607)
- 354 compressed objects within 4 object streams
- 97 named destinations out of 1000 (max. 500000)
- 60758 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 495 PDF objects out of 1000 (max. 8388607)
+ 363 compressed objects within 4 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 60768 words of extra memory for PDF output out of 61914 (max. 10000000)
 

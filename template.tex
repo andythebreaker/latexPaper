@@ -542,16 +542,66 @@ The user can input the length and width centimeters of the target slide.
 	\caption{Sample figure caption.}
 	\label{fig:SIj7pfq}
 \end{figure}
-\paragraph{Database build}
+\paragraph{Database build} Machine vision (image recognition) training data finishing tool
+When conducting machine visual image recognition model training, we often need to store a large amount of image data. Each image data requires a corresponding label data file.
+Recently, a brand -new company Roboflow launched such a service. I can pass the picture (to the training data) to the Roboflow server.
+Organizing and induction training materials are the strengths of this set of software
+We can pre -process images
+It is also possible to amplify the data
+And divide the data and divided into several extensive versions
+Of course, the basic functions such as the labeled data and the unsigned information are also available
+The most important and most nice feature is the labeling image of the endless labeling
+This service is free to try under the expansion of limited data
+But be careful that the information will be made public
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Iry4lIy.jpg}
+	\caption{Sample figure caption.}
+	\label{fig:Iry4lIy}
+\end{figure}
 
 \subsubsection{Transfer Learning}
 
+When manually labeling data, it is easier to make the target photo exactly the same length and width as the resistive object, which is what we have always done. Unfortunately, if we need a lot of data, it is inevitable to fill several resistors in one frame, because it is very troublesome to capture samples one by one. Therefore, we use the screen object capture function of the YOLO suite here. After YOLO cuts and divides individual objects, we manually mark them.
+
+\paragraph{result}
+-when the confidence is set to 0.01, you can frame a lot of things (cups ..., etc.) in the position of the resistance
+-In the background is too messy, it cannot achieve the above effect
+
+(A) 2
+
+> Use 4 resistance label diagrams, migrate training, and judge the model
+> What will happen to see what will happen?
+> 90%training, 10%verification
+> It should be very collapsed
+(B) illustrate
+
+-In when confidence is set to 0.02, you can frame a lot of things
+-The forecast result is not ideal
+
+(C) Comments and Feedback
+
+(D)
+The parameter ( evolution) (genetic method) ... it takes a long time
+The video film
+In the last time the software label train
+Train, use the super parameter of the transfer training to adjust the ginseng
+> Among them, there are parameters of information amplification, no additional
+-Chn CNN, Backbone ...
+-This understanding why every user enters ...
+-The samples are good with a simple background, a sample of more than 100
 \subsubsection{data augmentation}
-
+In order to obtain more training materials, we use the power of the Internet to obtain photos by means of crawlers. Commonly used image libraries include GOOGLE, BING, FLICK, etc. Only the latter have free APIs that can be used. The first two For each service we need to use VPN or PROXY to avoid IP restrictions.
 \section{Experimental results}
-
-
 \subsection{traditional computer vision methods}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{marvin.jpg}
+	\caption{Sample figure caption.}
+	\label{fig:marvin}
+\end{figure}
 \subsection{Using the YOLO Kit}
 \subsection{attention model}
 \subsection{WPA Marginal Operations}
